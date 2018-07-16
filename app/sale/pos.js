@@ -3,8 +3,6 @@ $(document).ready(function () {
     //hide scroll bars
     $("body").css("overflow", "hidden");
 
-    // var fs = require("fs");
-    // var path = require('path');
     const ipc = require('electron').ipcRenderer;
 
     var fs = require("fs");
@@ -14,8 +12,7 @@ $(document).ready(function () {
     var measurelistfile = path.join(__dirname, '../../config/stockunitlist.json');
     var jsonmeasurelist = fs.readFileSync(measurelistfile);
     var measurelist = JSON.parse(jsonmeasurelist);
-    // console.log(statelist);
-
+   
     var units = '<option></option>';
     for (var i = 0; i < measurelist.length; i++) {
         units += '<option value="' + measurelist[i].unit_short_name + '">' + measurelist[i].unit_name + '</option>';
@@ -25,8 +22,7 @@ $(document).ready(function () {
 
     $('#SelectParty').prop("disabled", true);
     $('#RefreshPartList').prop("disabled", true);
-    // $('#AddToCart').prop("disabled", true);
-
+   
     $('#SaleListTbl').dataTable({
         "bLengthChange": false,
         pageLength: 5,
@@ -154,8 +150,7 @@ $(document).ready(function () {
 
     ipc.on('RecievedSalesId', function (event, arg) {
         SalesId = parseInt(arg);
-        // console.log(SalesId);
-        GetSalesData(SalesId).then(data => {
+              GetSalesData(SalesId).then(data => {
             $("#SelectCustomer").val(data.summary.VendorID).trigger("change");
             $("#BillFroAdrIdList").val(data.summary.BillFroId).trigger("change");
             $('#InvDate').val(moment(data.summary.InvDate).format('DD/MM/YYYY'));
@@ -376,8 +371,6 @@ $(document).ready(function () {
 
     $('#ManageCustFrm').on('click', '.delrow', function () {
         var rowidtodel = ($(this).attr("id"));
-        // var rowtodel = +(rowidtodel.slice(3, 10));
-        // alert((parseInt(rowidtodel)) - 1);
         details.splice((rowidtodel - 1), 1)
         MakeList(details);
     });
