@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     const ipc = require('electron').ipcRenderer;
-    async = require("async");
+//     async = require("async");
     var InvId, BillFroId, BillToId;
 
     ipc.on('SalesIdIs', (event, arg) => {
