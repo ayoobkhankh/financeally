@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Manage Connections</title>
+    <link href="../../dependancies/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../dependancies/css/select2.min.css" rel="stylesheet" type="text/css">
+    <link href="../../dependancies/css/switchery.min.css" rel="stylesheet" type="text/css">
+    <link href="../../dependancies/css/custom.min.css" rel="stylesheet" type="text/css">
+    <link href="../../dependancies/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <style>
+        .buttonwidth {
+            width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="row">
+                <div>
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Manage Connections
+                                <small></small>
+                            </h2>
+                            <div class="clearfix"></div>
+                            <i class="fa fa-info-circle" style=" color: lightcoral"></i>&emsp;Create/manage tax catagories. All the tax rates required should be configured here.
+                        </div>
+                        <form class="form-horizontal form-label-left input_mask">
+                            <!-- <div class="x_content">
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <label>Toggle Create / Update&emsp;</label>
+                                    <input type="checkbox" class="js-switch" id="vendor_edit_create_toggle" checked="checked">
+                                </div>
+
+                                <div class="col-md-4 col-sm-4 col-xs-4 form-group has-feedback">
+                                    <select class="form-control" id="SelectCon" tabindex="-1">
+                                        <option></option>
+
+                                    </select>
+                                </div>
+                                <div class="col-md-1 col-sm-1 col-xs-1">
+                                    <button type="button" class="btn btn-danger btn-sm" id="RefreshConList">
+                                        <i class="fa fa-refresh" aria-hidden="true"></i> Refresh List</button>
+                                </div>
+                            </div> -->
+                            <div class="x_content">
+                                <!-- <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default btn-sm buttonwidth" disabled>Name</button>
+                                        </span>
+                                        <input type="text" id="ConName" class="form-control form-fixer">
+                                    </div>
+                                </div> -->
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="input-group">
+                                        <label class="input-group-addon">Server</label>
+                                        <input type="text" id="ServerName" class="form-control form-fixer">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="input-group">
+                                        <label class="input-group-addon">Port</label>
+                                        <input type="text" id="Port" class="form-control form-fixer">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="input-group">
+                                        <label class="input-group-addon">Database</label>
+                                        <input type="text" id="DatabaseName" class="form-control form-fixer">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="input-group">
+                                        <label class="input-group-addon">Username</label>
+                                        <input type="text" id="UserName" class="form-control form-fixer">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="input-group">
+                                        <label class="input-group-addon">Password</label>
+                                        <input type="password" id="Password" class="form-control form-fixer">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-md-offset-3">
+                                    <button type="button" class="btn btn-default btn-sm" id="ServerConnect">
+                                        <i class="fa fa-plug" aria-hidden="true"></i> Save connection</button>
+                                    <button type="button" class="btn btn-default btn-sm" id="InitDB">
+                                        <i class="fa fa-plug" aria-hidden="true"></i> Initialize DB</button>
+                                    <button type="button" class="btn btn-default btn-sm">
+                                        <i class="fa fa-times-circle" aria-hidden="true"></i> Cancel</button>
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-6 col-sm-6 form-group has-feedback" id="ServerMsg">.
+                            </div> -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        // You can also require other files to run in this process
+        require('../../renderer.js')
+    </script>
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="../../dependancies/js/jquery.min.js"></script>
+    <script src="../../dependancies/js/bootstrap.min.js"></script>
+    <script src="../../dependancies/js/select2.min.js"></script>
+    <script src="../../dependancies/js/switchery.min.js"></script>
+    <script src="../../dependancies/js/custom.min.js"></script>
+    <!-- <script src="ConnectionActivities.js"></script> -->
+    <script src="ManageConnections.js"></script>
+    <script>
+        if (window.module) module = window.module;
+    </script>
+</body>
+
+</html>

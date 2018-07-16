@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Search Sales</title>
+    <link href="../../dependancies/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../dependancies/css/select2.min.css" rel="stylesheet" type="text/css">
+    <link href="../../dependancies/css/switchery.min.css" rel="stylesheet" type="text/css">
+    <link href="../../dependancies/css/daterangepicker.css" rel="stylesheet" type="text/css">
+    <link href="../../dependancies/css/custom.min.css" rel="stylesheet" type="text/css">
+    <link href="../../dependancies/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../dependancies/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="../../dependancies/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="../../dependancies/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="../../dependancies/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="../../dependancies/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .amttd {
+            text-align: right;
+        }
+
+        .LblSizeFix {
+            font-size: 12px;
+            font-weight: normal;
+            color: #5D6D7E;
+            line-height: 15px;
+        }
+
+        #datatable {
+            font-size: 12px;
+        }
+
+        .selrow {
+            color: red;
+        }
+    </style>
+</head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="row">
+                <div>
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Search Sales
+                                <small></small>
+                            </h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <!-- <div class="col-md-4 col-sm-4 col-xs-12">
+                            <label>Toggle Create / Update&emsp;</label>
+                            <input type="checkbox" class="js-switch" id="vendor_edit_create_toggle"
+                                checked="checked">
+                        </div> -->
+
+                        <!-- <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default btn-sm">From</button>
+                                </span>
+                                <input type="text" class="form-control date-picker" id="InvDateFrom">
+                            </div>
+                        </div>-->
+
+                        <div class="col-md-4 col-sm-4 col-xs-4 form-group has-feedback">
+                            <div class="input-group">
+                                <label class="input-group-addon">Period</label>
+                                <input type="text" width="100%" id="reservation" class="form-control date-picker" value="01/01/2016 - 01/25/2016" />
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12 form-group has-feedback">
+                            <select class="select2_single form-control" id="SelectField" tabindex="-1">
+                                <option></option>
+                                <option value="InvoiceNo">Invoice No.</option>
+                                <option value="VendorName">Customer Name</option>
+                                <option value="BillFroStateCode">Bill from State</option>
+                                <option value="BillToStateCode">Bill to State</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="ProductId">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-info btn-sm" id="SearchSales">Search</button>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="x_content">
+
+                            <table id="datatable" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Invoice No</th>
+                                        <th>Invoice Date</th>
+                                        <th>Customer Name</th>
+                                        <th>Gross</th>
+                                        <th>Tax</th>
+                                        <th>Total</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+
+
+                                <tbody id="ListTblBody">
+                                    <!-- <tr>
+                                        <td>Tiger Nixon</td>
+                                        <td>System Architect</td>
+                                        <td>Edinburgh</td>
+                                        <td>61</td>
+                                        <td>2011/04/25</td>
+                                        <td>$320,800</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Garrett Winters</td>
+                                        <td>Accountant</td>
+                                        <td>Tokyo</td>
+                                        <td>63</td>
+                                        <td>2011/07/25</td>
+                                        <td>$170,750</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ashton Cox</td>
+                                        <td>Junior Technical Author</td>
+                                        <td>San Francisco</td>
+                                        <td>66</td>
+                                        <td>2009/01/12</td>
+                                        <td>$86,000</td>
+                                    </tr>                                  -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- <div class="x_content">
+                            <form class="form-horizontal" id="SearchSalesFrm">
+                                <div id="SaleList">
+                                    <div class="ln_solid"></div>
+                                    <table class="table table-striped LblSizeFix">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Invoice No</th>
+                                                <th>Invoice Date</th>
+                                                <th>Customer Name</th>
+                                                <th class='amttd'>Gross</th>
+                                                <th class='amttd'>Tax</th>
+                                                <th class='amttd'>Total</th>
+                                                <th class='amttd'>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="ListTblBody">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </form>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // You can also require other files to run in this process
+        require('../../renderer.js')
+    </script>
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="../../dependancies/js/jquery.min.js"></script>
+    <script src="../../dependancies/js/bootstrap.min.js"></script>
+    <!-- <script src="../../dependancies/js/parsley.min.js"></script> -->
+    <script src="../../dependancies/js/select2.min.js"></script>
+    <script src="../../dependancies/js/moment.min.js"></script>
+    <script src="../../dependancies/js/daterangepicker.js"></script>
+    <script src="../../dependancies/js/parsley.min.js"></script>
+    <script src="../../dependancies/js/custom.min.js"></script>
+    <script src="../../dependancies/js/jquery.dataTables.min.js"></script>
+    <script src="../../dependancies/js/dataTables.bootstrap.min.js"></script>
+    <script src="../../dependancies/js/dataTables.buttons.min.js"></script>
+    <script src="../../dependancies/js/buttons.bootstrap.min.js"></script>
+    <script src="../../dependancies/js/buttons.flash.min.js"></script>
+    <script src="../../dependancies/js/buttons.html5.min.js"></script>
+    <script src="../../dependancies/js/buttons.print.min.js"></script>
+    <script src="../../dependancies/js/dataTables.fixedHeader.min.js"></script>
+    <script src="../../dependancies/js/dataTables.keyTable.min.js"></script>
+    <script src="../../dependancies/js/dataTables.responsive.min.js"></script>
+    <script src="../../dependancies/js/responsive.bootstrap.js"></script>
+    <script src="../../dependancies/js/datatables.scroller.min.js"></script>
+    <!-- <script src="../../dependancies/js/switchery.min.js"></script> -->
+    <script src="../server/ServerActivities.js"></script>
+    <script src="SearchSales.js"></script>
+    <script>
+        if (window.module) module = window.module;
+    </script>
+</body>
+
+</html>

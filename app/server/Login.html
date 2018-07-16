@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+    <link href="../../dependancies/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../dependancies/css/select2.min.css" rel="stylesheet" type="text/css">
+    <link href="../../dependancies/css/custom.min.css" rel="stylesheet" type="text/css">
+    <link href="../../dependancies/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <style>
+        .buttonwidth {
+            width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div class="row">
+                <div>
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>
+                                Login
+                            </h2>
+                            <div class="clearfix"></div>
+                            <i class="fa fa-unlock" style=" color: lightcoral"></i>&emsp;Please enter your login credentials to proceed.
+                        </div>
+                        <!-- <div class="x_content">
+                            <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+                                <select class="select2_single form-control" id="SelectCon" tabindex="-1">
+                                    <option></option>
+
+                                </select>
+                            </div>
+                        </div> -->
+                        <!-- <div class="x_content">
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-md-offset-3">
+
+                                    <button type="button" class="btn btn-info btn-xs" id="RefreshCons">
+                                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="x_content">
+
+                            <form class="form-horizontal form-label-left input_mask">
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+                                    <input type="text" class="form-control has-feedback-left" id="UName" placeholder="Username">
+                                    <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+                                    <input type="password" class="form-control has-feedback-left" id="PWord" placeholder="Password">
+                                    <span class="fa fa-lock form-control-feedback left" aria-hidden="true"></span>
+                                </div>
+
+                        </div>
+                        <div class="x_content">
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-md-offset-3">
+                                    <!-- <button type="button" class="btn btn-default btn-sm" id="ServerConnect">
+                                    <i class="fa fa-plug" aria-hidden="true"></i> Connect</button> -->
+                                    <button type="button" class="btn btn-success btn-sm" id="LoginBtn">
+                                        <i class="fa fa-sign-in" aria-hidden="true"></i> Login</button>
+                                    <button type="button" class="btn btn-dark btn-xs" id="ShowManageCon">
+                                        <i class="fa fa-gear" aria-hidden="true"></i>
+                                        Configure</button>
+                                    <button type="button" class="btn btn-dark btn-xs" id="ShowManageUsers">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        Manage Users</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        // You can also require other files to run in this process
+        require('../../renderer.js')
+    </script>
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="../../dependancies/js/jquery.min.js"></script>
+    <script src="../../dependancies/js/bootstrap.min.js"></script>
+    <script src="../../dependancies/js/select2.min.js"></script>
+    <script src="../../dependancies/js/custom.min.js"></script>
+    <script src="../server/ConnectionActivities.js"></script>
+    <script src="Login.js"></script>
+    <script>
+        if (window.module) module = window.module;
+    </script>
+</body>
+
+</html>

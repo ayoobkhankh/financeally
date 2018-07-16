@@ -1,0 +1,173 @@
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Company Master</title>
+    <link href="../../dependancies/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../dependancies/css/select2.min.css" rel="stylesheet" type="text/css">
+    <link href="../../dependancies/css/switchery.min.css" rel="stylesheet" type="text/css">
+    <link href="../../dependancies/css/custom.min.css" rel="stylesheet" type="text/css">
+    <link href="../../dependancies/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <style>
+        input[type="file"] {
+            height: 28px;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="row">
+                <div>
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Company Master
+                            </h2>
+
+                            <div class="clearfix"></div>
+                            <i class="fa fa-info-circle" style=" color: lightcoral"></i>&emsp;A customer/vendor can have multiple addresses with unique GSTINs. Click on 'Manage
+                            Branches' to add/edit branches.
+
+                        </div>
+                        <!-- <div class="col-md-4 col-sm-4 col-xs-12">
+                            <label>Toggle Create / Update&emsp;</label> <input type="checkbox" class="js-switch" id="vendor_edit_create_toggle"
+                                checked="checked">
+                        </div> -->
+                        <!-- <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+                            <select class="select2_single form-control" id="SelectParty" tabindex="-1">
+                                            <option></option>
+                                        </select>
+
+                        </div> -->
+                        <!-- <div class="col-md-1 col-sm-1 col-xs-12 form-group has-feedback">
+                            <button type="button" class="btn btn-default" id="RefreshPartList"><i class="fa fa-refresh"  aria-hidden="true"></i></button>
+
+                        </div> -->
+
+
+
+                        <div class="x_content">
+                            <form class="form-horizontal" id="EditMasterForm" data-parsley-validate="">
+                                <div class="form-group">
+                                    <!-- <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+                                        <div class="input-group">
+                                            <span class="input-group-btn">
+                                              <button type="button" class="btn btn-info btn-sm">ID</button>
+                                          </span>
+                                            <input type="text" class="form-control" disabled id="SelfId">
+                                        </div>
+                                    </div> -->
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">Name</label>
+                                            <input type="text" id="SelfName" class="form-control form-fixer" required="" data-parsley-length="[3, 100]" data-parsley-errors-messages-disabled>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">Tag-line</label>
+                                            <input type="text" id="Tagline" class="form-control form-fixer" data-parsley-length="[3, 100]" data-parsley-errors-messages-disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">Reg No.</label>
+                                            <input type="text" id="RegNo" class="form-control form-fixer" data-parsley-length="[3, 100]" data-parsley-errors-messages-disabled>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="input-group">
+                                            <label class="input-group-addon">PAN</label>
+                                            <input type="text" id="SelfPAN" class="form-control form-fixer" data-parsley-minlength="10" data-parsley-pattern="^[a-zA-Z]{5}\d{4}[a-zA-Z]{1}$"
+                                                data-parsley-maxlength="10" data-parsley-errors-messages-disabled>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="input-group">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-dark btn-sm" disabled>Company Logo</button>
+                                                <!-- </span> -->
+                                                <!-- <input type="text" class="form-control form-fixer"> -->
+                                                <!-- <span class="input-group-btn"> -->
+                                                <button type="button" class="btn btn-default btn-sm">
+                                                    <i class="fa fa-eye" aria-hidden="true"></i> Preview</button>
+                                                <!-- </span>
+                                                                                        <span class="input-group-btn"> -->
+                                                <button type="button" class="btn btn-default btn-sm" id="OpenSelectLogoDlg">
+                                                    <i class="fa fa-folder-open" aria-hidden="true"></i>
+                                                    Select Logo</button>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-3 col-xs-12">
+                                        <div class="input-group">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-dark btn-sm" disabled> Signature</button>
+                                                <!-- </span> -->
+                                                <!-- <input type="text" class="form-control form-fixer"> -->
+                                                <!-- <span class="input-group-btn"> -->
+                                                <button type="button" class="btn btn-default btn-sm">
+                                                    <i class="fa fa-eye" aria-hidden="true"></i> Preview</button>
+                                                <!-- </span>
+                                                                                        <span class="input-group-btn"> -->
+                                                <button type="button" class="btn btn-default btn-sm" id="OpenSelectSignDlg">
+                                                    <i class="fa fa-folder-open" aria-hidden="true"></i>
+                                                    Select Signature</button>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="ln_solid"></div>
+                                <div class="form-group">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
+                                        <button type="button" class="btn btn-default btn-sm" id="SaveMasterData">
+                                            <i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
+                                        <button type="button" class="btn btn-default btn-sm">
+                                            <i class="fa fa-times-circle" aria-hidden="true"></i> Cancel</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // You can also require other files to run in this process
+        require('../../renderer.js')
+    </script>
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="../../dependancies/js/jquery.min.js"></script>
+    <script src="../../dependancies/js/bootstrap.min.js"></script>
+    <!-- <script src="../../dependancies/js/parsley.min.js"></script> -->
+    <script src="../../dependancies/js/select2.min.js"></script>
+    <script src="../../dependancies/js/parsley.min.js"></script>
+    <script src="../../dependancies/js/custom.min.js"></script>
+    <script src="../../dependancies/js/switchery.min.js"></script>
+    <script src="../server/ServerActivities.js"></script>
+    <script src="EditMaster.js"></script>
+    <script>
+        if (window.module) module = window.module;
+    </script>
+</body>
+
+</html>

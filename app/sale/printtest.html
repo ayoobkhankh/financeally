@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Print Invoice</title>
+    <!-- <link href="../../dependancies/css/bootstrap.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link href="../../dependancies/css/select2.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link href="../../dependancies/css/switchery.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link href="../../dependancies/css/custom.min.css" rel="stylesheet" type="text/css">
+    <link href="../../dependancies/css/daterangepicker.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link href="../../dependancies/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <style>
+        body {
+            font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        table.billbodytbl {
+            /* border-collapse: collapse; */
+            /* border: 1px solid #839E99; */
+            width: 800px;
+            /* border: 1px solid #D7DBDD; */
+            align-self: center;
+        }
+
+        .tdwithborder {
+            border: 1px solid #D7DBDD;
+            border-collapse: collapse;
+
+        }
+
+        .grey {
+            background-color: #D7DBDD;
+        }
+
+        .aligncenter {
+            text-align: center;
+        }
+
+        .itemlist {
+            border: 1px solid black;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        table.itemlist td {
+            border: 1px solid black;
+
+            padding: 5px;
+        }
+
+        table.itemlist th {
+            border: 1px solid black;
+            text-align: center;
+            padding: 0px;
+            background-color: #D7DBDD;
+            font-weight: 100;
+        }
+
+        .amtstyle {
+            text-align: right;
+        }
+
+        .centerstyle {
+            text-align: center;
+        }
+
+        .HideIfCessZero {
+            font-size: 12px;
+        }
+
+        /* table.itemlist tr {
+            border: 1px solid black;
+            padding: 0px;
+            border-collapse: collapse;
+        } */
+    </style>
+</head>
+
+<body>
+    <table class="heading" width="100%">
+        <tr>
+            <td width="30%">
+                <img src="../../dependancies/images/logo.png" width="200px">
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    </table>
+    <table class="billbodytbl">
+        <tr>
+            &emsp;
+        </tr>
+        <tr>
+            <td colspan="17">
+                <label id="SelfName">
+
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="17">
+                <label id="BillFromAdrLbl"> </label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="17">
+                Phone: 0484 4041644, Mob: 9526264793
+            </td>
+        </tr>
+        <tr>
+            <td colspan="17">
+                GSTIN:
+                <label id="BillFromGSTINLbl"> </label>, PAN:
+                <label id="SelfPAN"></label>
+            </td>
+        </tr>
+        <!-- <tr>
+            <td colspan="17">
+                &emsp;
+            </td>
+        </tr> -->
+        <tr>
+            <td colspan="17" class="aligncenter grey tdwithborder">
+                <b>Tax Invoice</b>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="8">
+                <table width="50%" style="float: left;">
+                    <tr>
+                        <td>
+                            <u> Bill to Address:</u>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label id="BillToCustNameLbl"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label id="BillToCustAdrLbl"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            GSTIN:
+                            <label id="BillToCustGSTINLbl"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            State:
+                            <label id="BillToCustStateLbl"></label>, State Code:
+                            <label id="BillToCustStateCodeLbl"></label>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <table width="50%" style="float: right;">
+
+                    <tr>
+                        <td>
+                            Invoice Date:
+                            <label id="InvoiceDate"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Invoice No:
+                            <label id="InvoiceNo"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Purchase Order No:
+                            <label id="PONo"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sale Type:
+                            <label id="SaleType"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>RCM Applicability:
+                            <label id="RCM"></label>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table id="ItemListTbl" class="itemlist" width="100%">
+
+                    <!-- <thead>
+                        <tr>
+                            <th rowspan="2">
+                                Sl.
+                            </th>
+                            <th rowspan="2">
+                                Product Description
+                            </th>
+                            <th rowspan="2">
+                                HSN/SAC
+                            </th>
+                            <th rowspan="2">
+                                UQM
+                            </th>
+                            <th rowspan="2">
+                                Qty
+                            </th>
+                            <th rowspan="2">
+                                Rate
+                            </th>
+                            <th rowspan="2">
+                                Taxable value
+                            </th>
+                            <th colspan="2">
+                                SGST
+                            </th>
+                            <th colspan="2">
+                                CGST
+                            </th>
+                            <th colspan="2">
+                                IGST
+                            </th>
+                            <th colspan="2">
+                                Cess
+                            </th>
+                            <th rowspan="2">
+                                Tax Total
+                            </th>
+                            <th rowspan="2">
+                                Total
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th>Rate</th>
+                            <th>Amt</th>
+                            <th>Rate</th>
+                            <th>Amt</th>
+                            <th>Rate</th>
+                            <th>Amt</th>
+                            <th>Rate</th>
+                            <th>Amt</th>
+                        </tr>
+                    </thead> -->
+
+                    <!-- <tr>
+                        <td colspan="4">Total</td>
+
+                        <td>2</td>
+                        <td></td>
+                        <td>5000</td>
+                        <td>5000</td>
+                        <td></td>
+                        <td>450</td>
+                        <td></td>
+                        <td>450</td>
+                        <td></td>
+                        <td>0</td>
+                        <td></td>
+                        <td>0</td>
+                        <td>5900</td>
+                    </tr> -->
+                    <!-- <tr>
+                        <td colspan="10">Total Invoice Amount in words: </td>
+                        <td colspan="6">Total Amount before tax</td>
+                        <td></td>
+                    </tr> -->
+                    <!-- <tr>
+                        <td colspan="10" rowspan="5">Rupees Five thousand nine hundred only</td>
+                        <td colspan="6">Add: SGST</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">Add: CGST</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">Add: IGST</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">Total tax amount</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">Total amount after tax</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7">Bank Details</td>
+                        <td colspan="3" rowspan="7"></td>
+                        <td colspan="6">GST on Reverse charge</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7">Bank: </td>
+                        <td colspan="7"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7">Bank A/c No. </td>
+                        <td colspan="7"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7">IFSC:</td>
+                        <td colspan="7"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" rowspan="3">Terms & conditions</td>
+                        <td colspan="7"></td>
+                    </tr> -->
+
+
+                </table>
+
+                <script>
+                    // You can also require other files to run in this process
+                    require('../../renderer.js')
+                </script>
+                <script>
+                    if (typeof module === 'object') {
+                        window.module = module;
+                        module = undefined;
+                    }
+                </script>
+                <script src="../../dependancies/js/jquery.min.js"></script>
+                <script src="../../dependancies/js/moment.min.js"></script>
+                <script src="../server/ServerActivities.js"></script>
+                <!-- <script src="../../dependancies/js/bootstrap.min.js"></script> -->
+                <!-- <script src="../../dependancies/js/select2.min.js"></script>
+    <script src="../../dependancies/js/moment.min.js"></script>
+    <script src="../../dependancies/js/daterangepicker.js"></script> -->
+                <!--<script src="../../dependancies/js/parsley.min.js"></script> -->
+                <!-- <script src="../../dependancies/js/parsley.min.js"></script> -->
+                <!-- <script src="../../dependancies/js/custom.min.js"></script> -->
+                <!-- <script src="../../dependancies/js/switchery.min.js"></script> -->
+                <script src="printtest.js"></script>
+                <script>
+                    if (window.module) module = window.module;
+                </script>
+</body>
+
+</html>

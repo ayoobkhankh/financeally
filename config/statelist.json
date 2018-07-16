@@ -1,0 +1,181 @@
+ [{
+         "statename": "Jammu and Kashmir",
+         "statecode": "01",
+         "statetype": "STATE"
+     },
+     {
+         "statename": "Himachal Pradesh",
+         "statecode": "02",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Punjab",
+         "statecode": "03",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Chandigarh",
+         "statecode": "04",
+         "statetype": "UT"
+     },
+     {
+        "statename": "Uttarakhand",
+         "statecode": "05",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Haryana",
+         "statecode": "06",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Delhi",
+         "statecode": "07",
+         "statetype": "UT"
+     },
+     {
+        "statename": "Rajasthan",
+         "statecode": "08",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Uttar Pradesh",
+         "statecode": "09",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Bihar",
+         "statecode": "10",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Sikkim",
+         "statecode": "11",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Arunachal Pradesh",
+         "statecode": "12",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Nagaland",
+         "statecode": "13",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Manipur",
+         "statecode": "14",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Manipur",
+         "statecode": "14",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Mizoram",
+         "statecode": "15",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Tripura",
+         "statecode": "16",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Meghalaya",
+         "statecode": "17",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Assam",
+         "statecode": "18",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "West Bangal",
+         "statecode": "19",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Jharkhand",
+         "statecode": "20",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Odisha",
+         "statecode": "21",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Chhattisgarh",
+         "statecode": "22",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Madhya Pradesh",
+         "statecode": "23",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Gujarat",
+         "statecode": "24",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Daman and Diu",
+         "statecode": "25",
+         "statetype": "UT"
+     },
+     {
+        "statename": "Dadar and Nagar Haveli",
+         "statecode": "26",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Maharashtra",
+         "statecode": "27",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Karnataka",
+         "statecode": "29",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Goa",
+         "statecode": "30",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Lakshadweep",
+         "statecode": "31",
+         "statetype": "UT"
+     },
+     {
+        "statename": "Kerala",
+         "statecode": "32",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Tamil Nadu",
+         "statecode": "33",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Pondicherry",
+         "statecode": "34",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Andaman and Nicobar Islands",
+         "statecode": "35",
+         "statetype": "STATE"
+     },
+     {
+        "statename": "Telangana",
+         "statecode": "36",
+         "statetype": "STATE"
+     }
+ ]

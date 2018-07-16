@@ -1,0 +1,32 @@
+{
+  "name": "Financeally",
+  "version": "1.0.0",
+  "description": "Billing solution for shops",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^2.0.0"
+  },
+  "Dependencies": {
+    "electron": "^2.0.0"
+  },
+  "dependencies": {
+    "electron-rebuild": "^1.7.3",
+    "excel4node": "^1.4.0",
+    "mysql2": "^1.5.3",
+    "puppeteer": "^1.4.0",
+    "sequelize": "^4.37.10"
+  }
+}

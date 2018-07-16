@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Finance-ally</title>
+
+  <link href="../../dependancies/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../dependancies/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../../dependancies/css/custom.min.css" rel="stylesheet">
+  <link href="../../dependancies/css/daterangepicker.css" rel="stylesheet">
+
+
+
+  <style>
+    .serverstatCon {
+      color: rgb(57, 236, 201);
+    }
+
+    .serverstatDison {
+      color: #F1948A;
+    }
+
+    .LblSizeFix {
+      font-size: 11px;
+      font-weight: normal;
+    }
+  </style>
+
+</head>
+
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <center>
+              <a href="#" class="site_title">
+                <span>
+                  <img src="../../dependancies/images/icon.png" width="30px"> Finance-ally</span>
+              </a>
+            </center>
+            <br>
+
+          </div>
+          <div>
+            <center>
+              <label class="LblSizeFix">Server status:
+                <label id="ServerStatus" class="serverstatCon LblSizeFix">
+                </label>
+              </label>
+
+            </center>
+          </div>
+          <div class="clearfix"></div>
+          <img src="../../dependancies/images/logo.png" alt="..." width="100%">
+          <!-- <div class="profile clearfix">
+            <div class="profile_pic">
+              
+            </div>
+            <div class="profile_info">
+              <span>Welcome,</span>
+              <h2>John Doe</h2>
+            </div>
+          </div> -->
+          <br />
+          <br />
+
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <ul class="nav side-menu">
+                <li>
+                  <a>
+                    <i class="fa fa-home"></i> Home
+                    <span class="fa fa-chevron-down"></span>
+                  </a>
+                  <ul class="nav child_menu">
+                    <li>
+                      <a href="#" id="ShowEditMaster">Company Master</a>
+                    </li>
+                    <li>
+                      <a href="#" id="ShowEditMasterAddress">Manage Branches</a>
+                    </li>
+                    <li>
+                      <a href="#" id="ShowEditBanks">Manage Bank A/cs</a>
+                    </li>
+
+                  </ul>
+                </li>
+                <li>
+                  <a>
+                    <i class="fa fa-shopping-cart"></i> Sales
+                    <span class="fa fa-chevron-down"></span>
+                  </a>
+                  <ul class="nav child_menu">
+                    <li>
+                      <a href="#" id="ShowPOS">Point of Sale</a>
+                    </li>
+                    <li>
+                      <a href="#" id="ShowSearchSales">Search Sales</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a>
+                    <i class="fa fa-truck"></i> Purchases
+                    <span class="fa fa-chevron-down"></span>
+                  </a>
+                  <ul class="nav child_menu">
+                    <li>
+                      <a href="#" id="ShowManagePurchases">Manage Purchases</a>
+                    </li>
+                    <li>
+                      <a href="fixed_footer.html">Fixed Footer</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a>
+                    <i class="fa fa-tags"></i> Products
+                    <span class="fa fa-chevron-down"></span>
+                  </a>
+                  <ul class="nav child_menu">
+                    <li>
+                      <a href="#" id="ShowManageProduct">Manage Products</a>
+                    </li>
+                    <li>
+                      <a href="tables_dynamic.html">Table Dynamic</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a>
+                    <i class="fa fa-users"></i> Party
+                    <span class="fa fa-chevron-down"></span>
+                  </a>
+                  <ul class="nav child_menu">
+                    <li>
+                      <a href="#" id="ShowManageParty">Manage Party</a>
+                    </li>
+                    <li>
+                      <a href="#" id="ShowManageAdress">Manage Branches</a>
+                    </li>
+                  </ul>
+                </li>
+
+
+
+
+                <li>
+                  <a>
+                    <i class="fa fa-money"></i> Tax
+                    <span class="fa fa-chevron-down"></span>
+                  </a>
+                  <ul class="nav child_menu">
+                    <li>
+                      <a href="#" id="ShowManageTax">Manage Tax</a>
+                    </li>
+                    <li>
+                      <a href="#">General Elements</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a>
+                    <i class="fa fa-money"></i> Reports
+                    <span class="fa fa-chevron-down"></span>
+                  </a>
+                  <ul class="nav child_menu">
+                    <li>
+                      <a href="#" id="">Sales Report</a>
+                    </li>
+                    <li>
+                      <a href="#">Purchase Report</a>
+                    </li>
+                    <li>
+                      <a href="#">Tax Report</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="sidebar-footer hidden-small">
+            <a data-toggle="tooltip" data-placement="top" title="Settings">
+              <span class="fa fa-user-circle" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+              <span class="fa fa-cog" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="Lock">
+              <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" id="logoff" idata-placement="top" title="Logout">
+              <span class="fa fa-power-off" aria-hidden="true"></span>
+            </a>
+          </div>
+          <!-- /menu footer buttons -->
+        </div>
+      </div>
+
+      <!-- top navigation -->
+      <div class="top_nav">
+        <div class="nav_menu">
+          <nav>
+            <!-- <div class="nav toggle">
+              <a id="menu_toggle">
+                <i class="fa fa-bars"></i>
+              </a>
+            </div> -->
+
+            <ul class="nav navbar-nav navbar-right">
+              <li class="">
+                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  <img src="images/img.jpg" alt="">John Doe
+                  <span class=" fa fa-angle-down"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                  <li>
+                    <a href="javascript:;"> Profile</a>
+                  </li>
+                  <li>
+                    <a href="javascript:;">
+                      <span class="badge bg-red pull-right">50%</span>
+                      <span>Settings</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:;">Help</a>
+                  </li>
+                  <li>
+                    <a href="login.html">
+                      <i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li role="presentation" class="dropdown">
+                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                  <i class="fa fa-envelope-o"></i>
+                  <span class="badge bg-green">6</span>
+                </a>
+                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                  <li>
+                    <a>
+                      <span class="image">
+                        <img src="images/img.jpg" alt="Profile Image" />
+                      </span>
+                      <span>
+                        <span>John Smith</span>
+                        <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                        Film festivals used to be do-or-die moments for movie makers. They were where...
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span class="image">
+                        <img src="images/img.jpg" alt="Profile Image" />
+                      </span>
+                      <span>
+                        <span>John Smith</span>
+                        <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                        Film festivals used to be do-or-die moments for movie makers. They were where...
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span class="image">
+                        <img src="images/img.jpg" alt="Profile Image" />
+                      </span>
+                      <span>
+                        <span>John Smith</span>
+                        <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                        Film festivals used to be do-or-die moments for movie makers. They were where...
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span class="image">
+                        <img src="images/img.jpg" alt="Profile Image" />
+                      </span>
+                      <span>
+                        <span>John Smith</span>
+                        <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                        Film festivals used to be do-or-die moments for movie makers. They were where...
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <div class="text-center">
+                      <a>
+                        <strong>See All Alerts</strong>
+                        <i class="fa fa-angle-right"></i>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <!-- page content -->
+      <div class="right_col" role="main">
+        <!-- top tiles -->
+        <div class="row tile_count">
+          <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top">
+              <i class="fa fa-user"></i> Total Sales</span>
+            <div class="count">2,22,500</div>
+            <span class="count_bottom">
+              <i class="green">4% </i> From last Week</span>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top">
+              <i class="fa fa-clock-o"></i> Average Time</span>
+            <div class="count">123.50</div>
+            <span class="count_bottom">
+              <i class="green">
+                <i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top">
+              <i class="fa fa-user"></i> Total Males</span>
+            <div class="count green">2,500</div>
+            <span class="count_bottom">
+              <i class="green">
+                <i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top">
+              <i class="fa fa-user"></i> Total Females</span>
+            <div class="count">4,567</div>
+            <span class="count_bottom">
+              <i class="red">
+                <i class="fa fa-sort-desc"></i>12% </i> From last Week</span>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top">
+              <i class="fa fa-user"></i> Total Collections</span>
+            <div class="count">2,315</div>
+            <span class="count_bottom">
+              <i class="green">
+                <i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top">
+              <i class="fa fa-user"></i> Total Connections</span>
+            <div class="count">7,325</div>
+            <span class="count_bottom">
+              <i class="green">
+                <i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+          </div>
+        </div>
+        <!-- /top tiles -->
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="dashboard_graph">
+
+              <div class="row x_title">
+                <div class="col-md-6">
+                  <h3>Network Activities
+                    <small>Graph title sub-title</small>
+                  </h3>
+                </div>
+                <div class="col-md-2 pull-right">
+                  <fieldset>
+                    <div class="control-group pull-right">
+                      <div class="controls">
+                        <div class="input-prepend input-group">
+                          <span class="add-on input-group-addon">
+                            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                          </span>
+                          <input type="text" style="width: 200px" id="reservation" class="form-control date-picker" value="01/01/2016 - 01/25/2016"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+
+              <div class="col-md-9 col-sm-9 col-xs-12">
+                <div id="placeholder33" style="height: 260px; display: none" class="demo-placeholder"></div>
+                <div style="width: 100%;">
+                  <div id="canvas_dahs" class="demo-placeholder" style="width: 100%; height:270px;"></div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
+                <div class="x_title">
+                  <h2>Top Campaign Performance</h2>
+                  <div class="clearfix"></div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-6">
+                  <div>
+                    <p>Facebook Campaign</p>
+                    <div class="">
+                      <div class="progress progress_sm" style="width: 76%;">
+                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="80"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <p>Twitter Campaign</p>
+                    <div class="">
+                      <div class="progress progress_sm" style="width: 76%;">
+                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-6">
+                  <div>
+                    <p>Conventional Media</p>
+                    <div class="">
+                      <div class="progress progress_sm" style="width: 76%;">
+                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <p>Bill boards</p>
+                    <div class="">
+                      <div class="progress progress_sm" style="width: 76%;">
+                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+        </div>
+        <br />
+
+        <div class="row">
+        </div>
+
+      </div>
+      <!-- /page content -->
+
+    </div>
+  </div>
+  <script>
+    // You can also require other files to run in this process
+    require('../../renderer.js')
+  </script>
+
+  <script>
+    if (typeof module === 'object') {
+      window.module = module;
+      module = undefined;
+    }
+  </script>
+  <!-- jQuery -->
+  <script src="../../dependancies/js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="../../dependancies/js/bootstrap.min.js"></script>
+  <!-- FastClick -->
+  <script src="../../dependancies/js/moment.min.js"></script>
+  <script src="../../dependancies/js/daterangepicker.js"></script>
+  <!-- Flot -->
+  <script src="../../dependancies/js/jquery.flot.js"></script>
+  <script src="../../dependancies/js/jquery.flot.pie.js"></script>
+  <script src="../../dependancies/js/jquery.flot.time.js"></script>
+  <script src="../../dependancies/js/jquery.flot.stack.js"></script>
+  <script src="../../dependancies/js/jquery.flot.resize.js"></script>
+  <!-- Flot plugins -->
+  <script src="../../dependancies/js/jquery.flot.orderBars.js"></script>
+  <script src="../../dependancies/js/jquery.flot.spline.min.js"></script>
+  <script src="../../dependancies/js/curvedLines.js"></script>
+
+  <script src="../../dependancies/js/custom.min.js"></script>
+  <!-- <script src="../server/ServerActivities.js"></script> -->
+  <script src="dashboard.js"></script>
+  <!-- Flot -->
+  <!-- <script>
+    $(document).ready(function () {
+
+    });
+  </script> -->
+  <!-- /Flot -->
+
+  <script>
+    if (window.module) module = window.module;
+  </script>
+
+</body>
+
+</html>
