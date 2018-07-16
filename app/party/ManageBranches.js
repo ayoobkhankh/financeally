@@ -75,7 +75,7 @@ $(document).ready(function () {
             for (var i = 0; i < rows.length; i++) {
                 var row = rows[i];
                 partylist += '<option value="' + row.id + '">' + row.id + ' . ' + row.PartyName + '</option>';
-                // console.log(row.CustName);
+           
             }
         });
         $('#SelectParty').html(partylist);
@@ -106,12 +106,7 @@ $(document).ready(function () {
     $("#SaveParty").click(function () {
         $('#ManageCustFrm').parsley().validate();
         if ($('#ManageCustFrm').parsley().isValid()) {
-            // var PartyAdrId = $('#PartyAdrId').val();
-            // var NewPartyAdrId
-            // if (PartyAdrId == "" || typeof PartyAdrId == 'undefined') {
-            //     NewPartyAdrId = 0
-            // } else NewPartyAdrId = PartyAdrId;
-            var PartyId = $('#PartyId').val();
+                     var PartyId = $('#PartyId').val();
             var PartyAdrType = $('#PartyAdrType option:selected').val();
             var PartyGSTIN = $('#PartyGSTIN').val();
             var PartyAdr = $('#PartyAdr').val();
