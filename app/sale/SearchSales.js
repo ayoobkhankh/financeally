@@ -90,14 +90,6 @@ $(document).ready(function () {
 
     $("#SearchSales").click(function () {
         var list = "";
-        // var InvDateFrom = $('#InvDateFrom').val();
-        // var InvDateTo = $('#InvDateTo').val();
-        // var momentObj1 = moment(InvDateFrom, 'DD/MM/YYYY');
-        // var momentObj2 = moment(InvDateTo, 'DD/MM/YYYY');
-        // var datediff = momentObj2.diff(momentObj1, 'days');
-
-        // var NewInvDateFrom = moment(momentObj1).format('YYYY-MM-DD')
-        // var NewInvDateTo = moment(momentObj2).format('YYYY-MM-DD')
         SearchSales(startdate, enddate, 0, 0).then(rows => {
             console.log(rows);
             var table = $('#datatable').dataTable();
@@ -113,15 +105,6 @@ $(document).ready(function () {
                 pageLength: 5
             });
 
-            // $('#datatable').data.reload();
-            // table = $('#datatable').DataTable({
-            // });
-
-            // table.destroy();
-
-            // table = $('#datatable').DataTable({
-            //     pageLength: 5
-            // });
         });
     });
 
