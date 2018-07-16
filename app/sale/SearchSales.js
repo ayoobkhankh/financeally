@@ -3,22 +3,7 @@ $(document).ready(function () {
     const ipc = require('electron').ipcRenderer
 
     var FromWindow;
-    // $("#SelectProduct").select2({
-    //     placeholder: "Select Product",
-    //     allowClear: true
-    // });
-
-    // $("#ProductType").select2({
-    //     placeholder: "Type",
-    //     allowClear: true,
-    //     minimumResultsForSearch: 5
-    // });
-
-    // $("#TaxClass").select2({
-    //     placeholder: "Tax Class",
-    //     allowClear: true
-    // });
-
+   
     ipc.on('SendFrom', (event, arg) => {
         FromWindow = arg;
         // alert(arg);
@@ -36,49 +21,6 @@ $(document).ready(function () {
 
     //hide scroll bars
     $("body").css("overflow", "hidden");
-
-    // var fs = require("fs");
-    // var path = require('path');
-
-    // //load measurement units
-    // var measurelistfile = path.join(__dirname, '../../config/stockunitlist.json');
-    // var jsonmeasurelist = fs.readFileSync(measurelistfile);
-    // var measurelist = JSON.parse(jsonmeasurelist);
-    // // console.log(statelist);
-
-    // var units = '<option></option>';
-    // for (var i = 0; i < measurelist.length; i++) {
-    //     units += '<option value="' + measurelist[i].unit_short_name + '">' + measurelist[i].unit_name + '</option>';
-    // }
-
-    // $('#MeasureUnit').html(units);
-
-    // $('#SelectParty').prop("disabled", true);
-    // $('#RefreshPartList').prop("disabled", true);
-
-    // $('[data-toggle="tooltip"]').tooltip();
-
-    // $('#InvDateFrom').daterangepicker({
-    //     locale: {
-    //         format: "DD/MM/YYYY",
-    //     },
-    //     singleDatePicker: true,
-    //     showDropdowns: true,
-    //     calender_style: "picker_1"
-    // }, function (start, end, label) {
-    //     var nowdate = (start.format('DD/MM/YYYY'));
-    // });
-
-    // $('#InvDateTo').daterangepicker({
-    //     locale: {
-    //         format: "DD/MM/YYYY",
-    //     },
-    //     singleDatePicker: true,
-    //     showDropdowns: true,
-    //     calender_style: "picker_1"
-    // }, function (start, end, label) {
-    //     var nowdate = (start.format('DD/MM/YYYY'));
-    // });
 
     var startdate, enddate;
 
@@ -131,53 +73,7 @@ $(document).ready(function () {
     //     $(this).parents(".popover").popover('hide');
     // });
 
-    // pool.getConnection(function(err, connection) {
-
-    // function GetProductList() {
-    //     var productlist = '<option></option>';
-    //     ListOfProducts(function (rows) {
-    //         for (var i = 0; i < rows.length; i++) {
-    //             var row = rows[i];
-    //             productlist += '<option value="' + row.ProductId + '">' + row.ProductId + ' . ' + row.ProductName + '</option>';
-    //         }
-    //         $('#SelectProduct').html(productlist);
-    //     });
-    // };
-
-    // GetProductList();
-
-    // function GetTaxList() {
-    //     var taxlist = '<option></option>';
-    //     ListOfTaxes(function (rows) {
-    //         // console.log(rows);
-    //         for (var i = 0; i < rows.length; i++) {
-    //             var row = rows[i];
-    //             taxlist += '<option value="' + row.TaxId + '">' + row.TaxId + ' . ' + row.TaxName + '</option>';
-    //         }
-    //         // console.log(taxlist);
-    //         $('#TaxClass').html(taxlist);
-    //     })
-    // };
-
-    // GetTaxList();
-    // //     GetProductList();
-    // //     GetNewProductID();
-
-    // $('#TaxClass').on('change', function (e) {
-    //     var SelectedTaxID = this.value;
-    //     if (SelectedTaxID != 0) {
-    //         GetTaxDetails(SelectedTaxID, function (rows) {
-    //             var row = rows[0];
-    //             $('#IGSTRate').val(row.IGSTRate);
-    //             $("#CGSTRate").val(row.CGSTRate);
-    //             $("#SGSTRate").val(row.SGSTRate);
-    //             $("#CESSRate").val(row.CESSRate);
-    //         });
-    //     };
-    // });
-
-
-    // function ClearAll() {
+        // function ClearAll() {
     //     $("#ProductName").val("");
     //     $("#ProductDesc").val("");
     //     $("#ProductType").val("").trigger("change");
@@ -191,75 +87,6 @@ $(document).ready(function () {
     //     $("#SalePrice").val("");
     // };
 
-    // $(":checkbox").change(function () {
-    //     if ($(this).is(':checked')) {
-    //         $('#SelectProduct').prop("disabled", true);
-    //         $('#RefreshProList').prop("disabled", true);
-    //         ClearAll();
-    //     } else {
-    //         $('#SelectProduct').prop("disabled", false);
-    //         $('#RefreshProList').prop("disabled", false);
-    //         $("#ProductId").val('');
-    //     }
-    // });
-
-    //     $("#SaveProduct").click(function() {
-    //         $('#ManagePrdFrm').parsley().validate();
-    //         if ($('#ManagePrdFrm').parsley().isValid()) {
-    //             var ProductId = $('#ProductId').val();
-    //             var ProductName = $('#ProductName').val();
-    //             var ProductDesc = $('#ProductDesc').val();
-    //             var ProductType = $('#ProductType option:selected').text();
-    //             var ProductCodeType = $('#ProductType option:selected').val();
-    //             var ProductCode = $('#ProductCode').val();
-    //             var TaxClassId = $('#TaxClass option:selected').val();
-    //             var MeasureUnit = $('#MeasureUnit option:selected').text();
-    //             var MeasureUnitShort = $('#MeasureUnit option:selected').val();
-    //             var SalePrice = $('#SalePrice').val();
-
-    //             var data = {
-    //                 ProductId: ProductId,
-    //                 ProductName: ProductName,
-    //                 ProductDesc: ProductDesc,
-    //                 ProductType: ProductType,
-    //                 ProductCodeType: ProductCodeType,
-    //                 ProductCode: ProductCode,
-    //                 TaxClassId: TaxClassId,
-    //                 MeasureUnit: MeasureUnit,
-    //                 MeasureUnitShort: MeasureUnitShort,
-    //                 SalePrice: SalePrice
-    //             };
-
-    //             connection.query('SELECT ProductId FROM products WHERE ProductId=' + ProductId, function(err, results, rows) {
-    //                 if (err) {
-    //                     console.log(err);
-    //                 };
-    //                 var numrows = results.length;
-    //                 // console.log(numrows);
-    //                 if (numrows == 0) {
-    //                     connection.query('INSERT INTO products SET?', data, function(err, result) {
-    //                         if (err) {
-    //                             console.log(err);
-    //                         };
-    //                         alert('Product: ' + ProductName + ' saved!');
-    //                         UpdateProductID();
-    //                         GetNewProductID();
-    //                         ClearAll();
-    //                     });
-    //                 } else {
-    //                     connection.query('UPDATE products SET? WHERE ProductId=' + ProductId, data, function(err, result) {
-    //                         if (err) {
-    //                             console.log(err);
-    //                         };
-    //                         alert('Product: ' + ProductName + ' Updated');
-    //                         UpdateProductID();
-    //                         GetNewProductID();
-    //                         ClearAll();
-    //                     });
-    //                 };
-    //             });
-    //         };
-    //     });
 
     $("#SearchSales").click(function () {
         var list = "";
@@ -313,41 +140,4 @@ $(document).ready(function () {
     //     fieldInstance.$element.popover('destroy');
     // });
 
-    // $('#SelectProduct').on('change', function (e) {
-    //     var SelectedProductID = this.value;
-    //     GetProductDetails(SelectedProductID, function (rows) {
-    //         var row = rows[0];
-    //         $('#ProductId').val(row.ProductId);
-    //         $("#ProductName").val(row.ProductName);
-    //         $("#ProductDesc").val(row.ProductDesc);
-    //         $("#ProductType").val(row.ProductCodeType).trigger("change");
-    //         $('#ProductCode').val(row.ProductCode);
-    //         $("#TaxClass").val(row.TaxClassId).trigger("change");
-    //         $("#MeasureUnit").val(row.MeasureUnitShort).trigger("change");
-    //         $("#SalePrice").val(row.SalePrice);
-    //     });
-    // });
-
-
-    // $("#SaveProduct").click(function () {
-    //     $('#ManagePrdFrm').parsley().validate();
-    //     if ($('#ManagePrdFrm').parsley().isValid()) {
-    //         var ProductId = $('#ProductId').val();
-    //         var NewProductId
-    //         if (ProductId == "") {
-    //             NewProductId = 0
-    //         } else NewProductId = ProductId;
-    //         var ProductName = $('#ProductName').val();
-    //         var ProductDesc = $('#ProductDesc').val();
-    //         var ProductType = $('#ProductType option:selected').text();
-    //         var ProductCodeType = $('#ProductType option:selected').val();
-    //         var ProductCode = $('#ProductCode').val();
-    //         var TaxClassId = $('#TaxClass option:selected').val();
-    //         var MeasureUnit = $('#MeasureUnit option:selected').text();
-    //         var MeasureUnitShort = $('#MeasureUnit option:selected').val();
-    //         var SalePrice = $('#SalePrice').val();
-    //         AddOrUpdateProduct(NewProductId, ProductName, ProductDesc, ProductType, ProductCodeType, ProductCode, TaxClassId, MeasureUnit, MeasureUnitShort, SalePrice, "Ayoob")
-    //     }
-    // });
-
-});
+    });
