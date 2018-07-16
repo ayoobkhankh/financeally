@@ -8,19 +8,13 @@
     <title>Point of sale</title>
     <link href="../../dependancies/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="../../dependancies/css/select2.min.css" rel="stylesheet" type="text/css">
-    <!-- <link href="../../dependancies/css/switchery.min.css" rel="stylesheet" type="text/css"> -->
     <link href="../../dependancies/css/custom.min.css" rel="stylesheet" type="text/css">
     <link href="../../dependancies/css/daterangepicker.css" rel="stylesheet" type="text/css">
     <link href="../../dependancies/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="../../dependancies/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <!-- <link href="../../dependancies/css/buttons.bootstrap.min.css" rel="stylesheet"> -->
-    <!-- <link href="../../dependancies/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
-    <link href="../../dependancies/css/responsive.bootstrap.min.css" rel="stylesheet"> -->
-    <!-- <link href="../../dependancies/css/scroller.bootstrap.min.css" rel="stylesheet"> -->
-    <style>
+     <style>
         #CustomerDetails {
-            /* height: 150px; */
-            overflow-y: auto;
+                      overflow-y: auto;
         }
 
         .LblSizeFix {
@@ -58,8 +52,7 @@
 
         #SaleList {
             height: 300px;
-            /* overflow-x: auto; */
-        }
+                  }
 
         #OptionsTbl.td {
             width: 16.5%;
@@ -113,18 +106,7 @@
                                 </span>
                             </div>
                         </div> -->
-                        <!-- <div class="col-md-2 col-sm-2 col-xs-12">
-                            <div class="input-group">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-dark btn-sm" id="RefreshProList" disabled> Products</button>
-                                    <button type="button" class="btn btn-dark btn-sm" id="RefreshProList">&emsp;
-                                        <i class="fa fa-plus-circle" id="RefreshProList" aria-hidden="true"></i> &emsp;</button>
-                                    <button type="button" class="btn btn-dark btn-sm" id="RefreshProList">&emsp;
-                                        <i class="fa fa-refresh" id="RefreshProList" aria-hidden="true"></i> &emsp;</button>
-
-                                </span>
-                            </div>
-                        </div> -->
+                        
                         <div class="x_content">
                             <div id="CustomerDetails">
 
@@ -240,48 +222,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <div class="col-md-3 col-sm-3 col-xs-12">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <div class="x_panel">
-                                        <div class="x_title">
-                                            <h2>
-                                                <small>Ship to Address </small>
-                                            </h2> &emsp;
-                                            <select id="ShipToAdrIdList">
-
-                                            </select>
-                                            <ul class="nav navbar-right panel_toolbox">
-                                                <li>
-                                                    <a class="collapse-link">
-                                                        <i class="fa fa-chevron-up"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="x_content">
-                                            <label id="ShipToCustNameLbl" class="setLblBold">
-                                            </label>
-                                            <br>
-                                            <label id="ShipToCustAdrLbl" class="LblSizeFix">
-                                            </label>
-                                            <br>
-                                            <label id="ShipToCustGSTINLbl" class="LblSizeFix">
-                                            </label>
-                                            <label id="ShipToCustStateCodeLbl" class="LblSizeFix">
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
+                               
+                       
                             </div>
                         </div>
                         <form class="form-horizontal" id="ManageCustFrm" data-parsley-validate="">
                             <div class="x_content">
-                                <!-- <div class="ln_solid"></div> -->
-
-
-                                <div class="col-md-1 col-sm-1 col-xs-1">
+                                                              <div class="col-md-1 col-sm-1 col-xs-1">
                                     <label>
                                         <input type="radio" id="newitem" value="newitem" name="group1"> New Item
                                     </label>
@@ -326,8 +273,7 @@
                                     <label>
                                         <input type="radio" value="exitem" checked="checked" id="exitem" name="group1"> Existing </label>
                                 </div>
-                                <!-- <div class="form-group"> -->
-                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                                              <div class="col-md-2 col-sm-2 col-xs-2">
                                     <select class="select2_single" id="SelectProduct" tabindex="-1">
                                         <option></option>
                                     </select>
@@ -419,9 +365,9 @@
                                     <label id="cessamt" class="LblSizeFix setLblBold">
                                     </label>
                                 </div>
-                                <!-- </div> -->
+                            
                                 <div id="SaleList">
-                                    <!-- <div class="ln_solid"></div> -->
+                                
                                     <table class="table table-striped LblSizeFix table-bordered" id="SaleListTbl">
                                         <thead>
                                             <tr>
@@ -531,16 +477,7 @@
     <script src="../../dependancies/js/jquery.dataTables.min.js"></script>
     <script src="../../dependancies/js/dataTables.bootstrap.min.js"></script>
     <script src="../../dependancies/js/dataTables.buttons.min.js"></script>
-    <!-- <script src="../../dependancies/js/buttons.bootstrap.min.js"></script>
-    <script src="../../dependancies/js/buttons.flash.min.js"></script>
-    <script src="../../dependancies/js/dataTables.fixedHeader.min.js"></script> -->
-    <!-- <script src="../../dependancies/js/buttons.html5.min.js"></script>
-    <script src="../../dependancies/js/buttons.print.min.js"></script> -->
-    <!-- <script src="../../dependancies/js/dataTables.keyTable.min.js"></script>
-    <script src="../../dependancies/js/dataTables.responsive.min.js"></script> -->
-    <!-- <script src="../../dependancies/js/responsive.bootstrap.js"></script> -->
-    <!-- <script src="../../dependancies/js/datatables.scroller.min.js"></script> -->
-    <script src="../server/ServerActivities.js"></script>
+      <script src="../server/ServerActivities.js"></script>
     <script src="pos.js"></script>
     <script>
         if (window.module) module = window.module;
