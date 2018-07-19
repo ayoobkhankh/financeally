@@ -1,3 +1,5 @@
+require('../server/ServerActivities')
+
 $(document).ready(function () {
 
     $("#SelectAccount").select2({
@@ -46,43 +48,18 @@ $(document).ready(function () {
         $(this).parents(".popover").popover('hide');
     });
 
-    // pool.getConnection(function(err, connection) {
+    async function GetBankList() {
+        var banklist = '<option></option>';
+        ListOfBankAccounts().then(rows => {
+            for (var i = 0; i < rows.length; i++) {
+                var row = rows[i];
+                banklist += '<option value="' + row.id + '">' + row.id + ' . ' + row.AccountName + '</option>';
+            }
+            $('#SelectAccount').html(banklist);
+        });
+    };
 
-    // async function GetProductList() {
-    //     var productlist = '<option></option>';
-    //     ListOfProducts().then(rows => {
-    //         for (var i = 0; i < rows.length; i++) {
-    //             var row = rows[i];
-    //             productlist += '<option value="' + row.id + '">' + row.id + ' . ' + row.ProductName + '</option>';
-    //         }
-    //         $('#SelectProduct').html(productlist);
-    //     });
-    // };
-
-    // async function GetTaxList() {
-    //     var taxlist = '<option></option>';
-    //     await ListOfTaxes().then(rows => {
-    //         for (var i = 0; i < rows.length; i++) {
-    //             var row = rows[i];
-    //             taxlist += '<option value="' + row.id + '">' + row.id + ' . ' + row.TaxName + '</option>';
-    //         }
-    //     });
-    //     $('#TaxClass').html(taxlist);
-    // };
-
-    // GetProductList();
-    // GetTaxList();
-
-    // $('#TaxClass').on('change', function (e) {
-    //     var SelectedTaxID = this.value;
-    //     GetTaxDetails(SelectedTaxID).then(rows => {
-    //         var row = rows[0];
-    //         $('#IGSTRate').val(row.IGSTRate);
-    //         $("#CGSTRate").val(row.CGSTRate);
-    //         $("#SGSTRate").val(row.SGSTRate);
-    //         $("#CESSRate").val(row.CESSRate);
-    //     });
-    // });
+    GetBankList();
 
     // function ClearAll() {
     //     $("#ProductName").val("");
@@ -98,58 +75,53 @@ $(document).ready(function () {
     //     $("#SalePrice").val("");
     // };
 
-    // $(":checkbox").change(function () {
-    //     if ($(this).is(':checked')) {
-    //         $('#SelectProduct').prop("disabled", true);
-    //         $('#RefreshProList').prop("disabled", true);
-    //         ClearAll();
-    //     } else {
-    //         $('#SelectProduct').prop("disabled", false);
-    //         $('#RefreshProList').prop("disabled", false);
-    //         $("#ProductId").val('');
-    //     }
-    // });
+    $(":checkbox").change(function () {
+        if ($(this).is(':checked')) {
+            $('#SelectAccount').prop("disabled", true);
+            $('#RefreshBankList').prop("disabled", true);
+            ClearAll();
+        } else {
+            $('#SelectAccount').prop("disabled", false);
+            $('#RefreshBankList').prop("disabled", false);
+            $("#BankAccId").val('');
+        }
+    });
 
-    // $("#RefreshProList").click(function () {
-    //     GetProductList();
-    // });
+    $("#RefreshBankList").click(function () {
+        GetBankList();
+    });
 
-    // $('#SelectProduct').on('change', function (e) {
-    //     var SelectedProductID = this.value;
-    //     GetProductDetails(SelectedProductID).then(rows => {
-    //         var row = rows[0];
-    //         $('#ProductId').val(row.id);
-    //         $("#ProductName").val(row.ProductName);
-    //         $("#ProductDesc").val(row.ProductDesc);
-    //         $("#ProductType").val(row.ProductCodeType).trigger("change");
-    //         $('#ProductCode').val(row.ProductCode);
-    //         $("#TaxClass").val(row.TaxClassId).trigger("change");
-    //         $("#MeasureUnit").val(row.MeasureUnitShort).trigger("change");
-    //         $("#SalePrice").val(row.SalePrice);
-    //     });
-    // });
+    $('#SelectAccount').on('change', function (e) {
+        var SelectedBankAccID = this.value;
+        GetBankAccDetails(SelectedBankAccID).then(rows => {
+            var row = rows[0];
+            $('#BankAccId').val(row.id);
+            $("#AccountName").val(row.AccountName);
+            $("#NameInBank").val(row.NameAsPerBank);
+            $("#NameOftheBank").val(row.BankName);
+            $("#AccountType").val(row.AccountType).trigger("change");
+            $('#IFSC').val(row.IFSC);
+            $("#Branch").val(row.Branch);
+        });
+    });
 
-
-    // $("#SaveProduct").click(function () {
-    //     $('#ManagePrdFrm').parsley().validate();
-    //     if ($('#ManagePrdFrm').parsley().isValid()) {
-    //         var ProductId = $('#ProductId').val();
-    //         var NewProductId
-    //         if (ProductId == "") {
-    //             NewProductId = 0
-    //         } else NewProductId = ProductId;
-    //         var ProductName = $('#ProductName').val();
-    //         var ProductDesc = $('#ProductDesc').val();
-    //         var ProductType = $('#ProductType option:selected').text();
-    //         var ProductCodeType = $('#ProductType option:selected').val();
-    //         var ProductCode = $('#ProductCode').val();
-    //         var TaxClassId = $('#TaxClass option:selected').val();
-    //         var MeasureUnit = $('#MeasureUnit option:selected').text();
-    //         var MeasureUnitShort = $('#MeasureUnit option:selected').val();
-    //         var SalePrice = $('#SalePrice').val();
-    //         var data = [NewProductId, ProductName, ProductDesc, ProductType, ProductCodeType, ProductCode, TaxClassId, MeasureUnit, MeasureUnitShort, SalePrice];
-    //         AddOrUpdateProduct(...data).then(result => alert(result));
-    //     }
-    // });
+    $("#SaveBankAccount").click(function () {
+        $('#ManageBankFrm').parsley().validate();
+        if ($('#ManageBankFrm').parsley().isValid()) {
+            var BankAccId = $('#BankAccId').val();
+            var NewBankAccId
+            if (BankAccId == "" || typeof BankAccId == 'undefined') {
+                NewBankAccId = 0
+            } else NewBankAccId = BankAccId;
+            var AccountName = $('#AccountName').val();
+            var NameAsPerBank = $('#NameInBank').val();
+            var BankName = $('#NameOftheBank').val();
+            var AccountType = $('#AccountType option:selected').val();
+            var IFSC = $('#IFSC').val();
+            var Branch = $('#Branch').val();
+            var data = [NewBankAccId, AccountName, NameAsPerBank, BankName, AccountType, IFSC, Branch];
+            AddOrUpdateBankAccount(...data).then(result => alert(result));
+        }
+    });
 
 });
